@@ -25,7 +25,17 @@ class SparkTwitterToneBreakdown extends Component{
     }
 
     onApiData(metrics) {
-        this.setState({"colData":metrics});
+		if (metrics != null && metrics.length > 1) {
+			var m = [metrics[0], ["emo"]];
+			var emoCnt = metrics[0].length - 1;
+			for (var i = 0; i < emoCnt; i++) m[1].push(0);
+			_.forEach(metrics.slice(1), function (el) {
+				_.forEach(el.slice(1), function (el, i) {
+					m[1][i + 1] += el;
+				});
+			});
+			this.setState({"colData": m});
+		} else this.setState({"colData": metrics});
     }
 
     componentDidUpdate() {
@@ -78,7 +88,8 @@ class SparkTwitterToneBreakdown extends Component{
 	        }
     	  },
     	  legend: {
-			  position: 'right'
+			  position: 'right',
+			  show: false
 		  }
       });
 
