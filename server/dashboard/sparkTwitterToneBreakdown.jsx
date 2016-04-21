@@ -107,7 +107,7 @@ class SparkTwitterToneBreakdown extends Component{
     render() {
     	return (
     		<div style={{height:'100%'}}>
-	    		<div className="chart-title-text">Trending sentiments</div>
+	    		<div className="chart-title-text">World Emotions</div>
 	            <div ref="chartWrapper" className="sparkTwitter-toneBreakDown-chart"></div>
 	        </div>
         );

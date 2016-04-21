@@ -26,7 +26,7 @@ var config = {
                 {
                     type: 'sparkTwitter.tone_breakdown',
                     columns: 3, rows: 45,
-                    x: 1, y: 4
+                    x: 1, y: 1
                 }
             ]
         }
